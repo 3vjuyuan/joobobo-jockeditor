@@ -1,0 +1,27 @@
+{
+  "name": "joobobo/jockeditor",
+  "type": "joobobo/component",
+  "description": "Joobobo in page editor based on CKeditor > 4.6",
+  "homepage": "https://www.joobobo.com",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Team Delta",
+      "email": "delta@3vjuyuan.com"
+    },
+    {
+      "name": "Team Fancy",
+      "email": "fancy@3vjuyuan.com"
+    }
+  ],
+  "support": {
+    "issues": "https://docs.joobobo.com/extensions/jockeditor"
+  },
+  "require": {
+    "php": ">=5.6.0",
+    "ckeditor/ckeditor": "4.*"
+  },
+  "config": {
+    "vendor-dir": "packages"
+  }
+}
