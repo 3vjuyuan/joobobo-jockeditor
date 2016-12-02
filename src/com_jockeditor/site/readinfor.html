@@ -75,24 +75,24 @@
                     <p>外部参考:<input type="text" class="form-control" id="booksname"></p>
                 </div>
                 <div class="tab-pane fade" id="img">
-                        <p>引言图片：<input type="file"  accept="image/png,image/jpg" id="one"></p>
-                        <p>图片浮动：
-                            <select class="form-control" id="s2">
-                                <option value="使用全局设置">使用全局设置</option>
-                                <option value="使用局部设置">使用局部设置</option>
-                            </select>
-                        </p>
-                        <p>文字替身:<input type="text" class="form-control" id="altone"></p>
-                        <p>标题:<input type="text" class="form-control" id="topicone"></p>
-                        <p>全文图片：<input type="file" accept="image/png,image/jpg" id="two"></p>
-                        <p>图片浮动：
-                            <select class="form-control" id="s3">
-                                <option value="使用全局设置">使用全局设置</option>
-                                <option value="使用局部设置">使用局部设置</option>
-                            </select>
-                        </p>
-                        <p>文字替身:<input type="text" class="form-control" id="alttwo"></p>
-                        <p>标题:<input type="text" class="form-control" id="topictwo"></p>
+                    <p>引言图片：<input type="file"  accept="image/png,image/jpg" id="one"></p>
+                    <p>图片浮动：
+                        <select class="form-control" id="s2">
+                            <option value="使用全局设置">使用全局设置</option>
+                            <option value="使用局部设置">使用局部设置</option>
+                        </select>
+                    </p>
+                    <p>文字替身:<input type="text" class="form-control" id="altone"></p>
+                    <p>标题:<input type="text" class="form-control" id="topicone"></p>
+                    <p>全文图片：<input type="file" accept="image/png,image/jpg" id="two"></p>
+                    <p>图片浮动：
+                        <select class="form-control" id="s3">
+                            <option value="使用全局设置">使用全局设置</option>
+                            <option value="使用局部设置">使用局部设置</option>
+                        </select>
+                    </p>
+                    <p>文字替身:<input type="text" class="form-control" id="alttwo"></p>
+                    <p>标题:<input type="text" class="form-control" id="topictwo"></p>
                 </div>
                 <div class="tab-pane fade" id="link">
                     <p>链接A:<input type="text" class="form-control" id="word1"></p>
@@ -121,15 +121,16 @@
                     </p>
                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="save()">保存</button>
                 </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <script>
     window.onload=function () {
         var storage = window.localStorage;
-        if(localStorage.getItem("data")!=null){
-
+        var data=JSON.parse(localStorage.data);
+        for(var o in data){
+            alert(data[o]);
         }
     }
     function  save(){
@@ -186,11 +187,9 @@
                     booksname:booksname, s2:s2,s3:s3,s4:s4, s5:s5,s6:s6,word1:word1,word2:word2,word3:word3,title1:title1,title2:title2,
                     title3:title3,altone:altone, alttwo:alttwo,one:one, topicone:topicone,topictwo:topictwo,two:two
                 });
-                var blob = new Blob([JSON.stringify(dat, null, 2)],{type:'application/json'});
-                localStorage.setItem('data',blob);
-                console.log(localStorage.data);
+                var data =JSON.stringify(dat);
+                localStorage.setItem('data',data);
             }
-
         }
     }
 </script>
