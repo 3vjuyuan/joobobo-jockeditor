@@ -8,20 +8,15 @@
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-    <div class="tab-pane fade" id="ejb">
-        <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-        </p>
-    </div>
-</div>
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">文章编辑</button>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog col-lg">
         <div class="modal-content col-lg-12">
             <ul id="myTab" class="nav nav-tabs">
                 <li class="active"><a href="#articleselect" data-toggle="tab">文章选项</a></li>
                 <li><a href="#publishselect" data-toggle="tab">发布选项</a></li>
-                <li><a href="#imgandlink" data-toggle="tab">图片和链接</a></li>
+                <li><a href="#img" data-toggle="tab">图片</a></li>
+                <li><a href="#link" data-toggle="tab">链接</a></li>
             </ul>
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade in active" id="articleselect">
@@ -55,15 +50,16 @@
                     </p>
                     <p>标签:<input type="text" class="form-control" placeholder="文本输入" id="tag" name="tag"></p>
                     <p>版本备注:<input type="text" class="form-control" placeholder="文本输入" id="exp" name="exp"></p>
+                    <p>作者笔名:<input type="text" class="form-control" id="pens"></p>
+                    <p>修改时间:<input type="time" class="form-control" id="modify"></p>
+                    <p>修改者:<input type="text" class="form-control" id="modifer"></p>
+                    <p>修改次数:<input type="text" class="form-control" id="times"></p>
                 </div>
                 <div class="tab-pane fade" id="publishselect">
                     <p>开始发布:<input type="date" class="form-control" id="start"></p>
                     <p>结束发布:<input type="date" class="form-control" id="end"></p>
                     <p>创建时间:<input type="text" class="form-control" id="create"></p>
-                    <p>作者笔名:<input type="text" class="form-control" id="pens"></p>
-                    <p>修改时间:<input type="time" class="form-control" id="modify"></p>
-                    <p>修改者:<input type="text" class="form-control" id="modifer"></p>
-                    <p>修改次数:<input type="text" class="form-control" id="times"></p>
+
                     <p>点击:<input type="text" class="form-control" id="clicks"></p>
                     <p>简介:<textarea type="textarea" class="form-control" id="infor"></textarea></p>
                     <p>关键词:<textarea type="textarea" class="form-control" id="key"></textarea></p>
@@ -78,8 +74,7 @@
                     <p>内容版权:<textarea type="textarea" class="form-control" id="contentright"></textarea></p>
                     <p>外部参考:<input type="text" class="form-control" id="booksname"></p>
                 </div>
-                <div class="tab-pane fade" id="imgandlink">
-                    <div class="form-group col-lg-3">
+                <div class="tab-pane fade" id="img">
                         <p>引言图片：<input type="file" multiple="multiple" ></p>
                         <p>图片浮动：
                             <select class="form-control" id="set">
@@ -89,12 +84,7 @@
                         </p>
                         <p>文字替身:<input type="text" class="form-control" placeholder="文本输入" name="alt"></p>
                         <p>标题:<input type="text" class="form-control" placeholder="文本输入" name="title"></p>
-                        <p>全文图片：
-                            <select class="form-control" id="language" name="language">
-                                <option value="english">english</option>
-                            </select>
-                        </p>
-                        <p>引言图片：<input type="file"></p>
+                        <p>引言图片：<input type="file" multiple="multiple" ></p>
                         <p>图片浮动：
                             <select class="form-control">
                                 <option value="使用全局设置">使用全局设置</option>
@@ -110,41 +100,40 @@
                                 <option value="english">english</option>
                             </select>
                         </p>
-                    </div>
-                    <div class="col-lg-3" >
-                        <p>链接A:<input type="text" class="form-control" placeholder="文本输入" name="word"></p>
-                        <p>链接A的文本:
-                            <input type="text" class="form-control" placeholder="文本输入"  name="title">
-                        </p>
-                        <p>打开链接（URL）的目标窗口：
-                            <select class="form-control">
-                                <option value="使用全局设置">使用全局设置</option>
-                                <option value="使用局部设置">使用局部设置</option>
-                            </select>
-                        </p>
-                        <p>链接B:<input type="text" class="form-control" placeholder="文本输入" name="word"></p>
-                        <p>链接B的文本:
-                            <input type="text" class="form-control" placeholder="文本输入"  name="title">
-                        </p>
-                        <p>打开链接（URL）的目标窗口：
-                            <select class="form-control">
-                                <option value="使用全局设置">使用全局设置</option>
-                                <option value="使用局部设置">使用局部设置</option>
-                            </select>
-                        </p>
-                        <p>链接C:<input type="text" class="form-control" placeholder="文本输入" name="word"></p>
-                        <p>链接C的文本:
-                            <input type="text" class="form-control" placeholder="文本输入"  name="title">
-                        </p>
-                        <p>打开链接（URL）的目标窗口：
-                            <select class="form-control">
-                                <option value="使用全局设置">使用全局设置</option>
-                                <option value="使用局部设置">使用局部设置</option>
-                            </select>
-                        </p>
-                    </div>
                 </div>
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="save()">保存</button>
+                <div class="tab-pane fade" id="link">
+                    <p>链接A:<input type="text" class="form-control" placeholder="文本输入" name="word"></p>
+                    <p>链接A的文本:
+                        <input type="text" class="form-control" placeholder="文本输入"  name="title">
+                    </p>
+                    <p>打开链接（URL）的目标窗口：
+                        <select class="form-control">
+                            <option value="使用全局设置">使用全局设置</option>
+                            <option value="使用局部设置">使用局部设置</option>
+                        </select>
+                    </p>
+                    <p>链接B:<input type="text" class="form-control" placeholder="文本输入" name="word"></p>
+                    <p>链接B的文本:
+                        <input type="text" class="form-control" placeholder="文本输入"  name="title">
+                    </p>
+                    <p>打开链接（URL）的目标窗口：
+                        <select class="form-control">
+                            <option value="使用全局设置">使用全局设置</option>
+                            <option value="使用局部设置">使用局部设置</option>
+                        </select>
+                    </p>
+                    <p>链接C:<input type="text" class="form-control" placeholder="文本输入" name="word"></p>
+                    <p>链接C的文本:
+                        <input type="text" class="form-control" placeholder="文本输入"  name="title">
+                    </p>
+                    <p>打开链接（URL）的目标窗口：
+                        <select class="form-control">
+                            <option value="使用全局设置">使用全局设置</option>
+                            <option value="使用局部设置">使用局部设置</option>
+                        </select>
+                    </p>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="save()">保存</button>
+                </div>
         </div>
     </div>
 </div>
@@ -189,11 +178,6 @@
             console.log( blob.size  );
         }
     }
-    //    $(function () { $('#myModal').on('hide.bs.modal', function () {
-    //        if(localStorage.getItem("data")){alert('已保存到本地');}
-    //        })
-    //    });
-
 </script>
 </body>
 </html>
